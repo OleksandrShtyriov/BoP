@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+void deleteArray(int* arr)
+{
+    delete[] arr;
+}
+
 int* inputArray(int n)
 {
     int* arr;
@@ -57,6 +62,8 @@ void testSaddle()
     arr = inputArray(n);
     cout << (isSaddle(n, arr) ? "The array is a saddle" : "The array is not a saddle");
     cout << endl;
+    
+    deleteArray(arr);
 }
 
 int main()
