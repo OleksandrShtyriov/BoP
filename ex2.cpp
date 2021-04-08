@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
 
+void deleteMatrix(int n, int** matrix)
+{
+    for(int i = 0; i < n; i++)
+        delete[] matrix[i];
+    delete[] matrix;
+}
+
 int** inputMatrix(int n, int m)
 {
     int** matrix;
@@ -72,6 +79,8 @@ void checkLatinSquare()
     cout << (isLatinSquare(n, matrix) ? "The matrix is a latin square."
     : "The matrix is not a latin square.");
     cout << endl;
+    
+    deleteMatrix(n, matrix);
 }
 
 int main()
