@@ -65,6 +65,7 @@ void testArrayWithoutRepetitions()
     arr = inputArray(n);
     
     arrayWithoutRepetitions(n, arr, true);
+    delete[] arr;
 }
 
 int main()
